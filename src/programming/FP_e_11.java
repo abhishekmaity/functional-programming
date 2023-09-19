@@ -13,7 +13,7 @@ public class FP_e_11 {
 
     private static List<Integer> evenNumbers(List<String> courses) {
         return courses.stream()
-                .map(x->x.length())
+                .map(String::length)
                 .collect(Collectors.toList());
     }
 }
