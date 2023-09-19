@@ -2,7 +2,6 @@ package programming;
 
 import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 public class FP_e_13 {
 
@@ -20,7 +19,7 @@ public class FP_e_13 {
     private static void squareAndPrint(List<Integer> numbers, Function<Integer, Integer> squareNumbers) {
         numbers.stream()
                 .map(squareNumbers)
-                .collect(Collectors.toList())
+                .toList()
                 .forEach(System.out::println);
     }
 }
