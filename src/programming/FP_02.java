@@ -7,6 +7,7 @@ public class FP_02 {
         printAllListOfNumber(List.of(1,2,3,4,5,6,7,8,9));
     }
 
+    @SuppressWarnings("All")
     private static void printAllListOfNumber(List<Integer> integers) {
 //        for(int number:integers)
 //            System.out.println(number);
