@@ -1,7 +1,9 @@
 package programming;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 class Course{
     private String name;
@@ -83,5 +85,31 @@ public class FP_10 {
         Predicate<Course> reviewScoreLessThan90Predicate = course -> course.getReviewScore() < 90;
         System.out.println(courses.stream().noneMatch(reviewScoreLessThan90Predicate));
         System.out.println(courses.stream().anyMatch(reviewScoreLessThan90Predicate));
+
+        Comparator<Course> noOfStudentsByCoursesIncreasing =
+                Comparator.comparingInt(Course::getNoOfStudents);
+
+        List<Course> displayNoOfStudentsByCoursesIncreasing = courses.stream()
+                .sorted(noOfStudentsByCoursesIncreasing)
+                .collect(Collectors.toList());
+        System.out.println(displayNoOfStudentsByCoursesIncreasing);
+
+        Comparator<Course> noOfStudentsByCoursesDecreasing =
+                Comparator.comparingInt(Course::getNoOfStudents).reversed();
+
+        List<Course> displayNoOfStudentsByCoursesDecreasing = courses.stream()
+                .sorted(noOfStudentsByCoursesDecreasing)
+                .collect(Collectors.toList());
+        System.out.println(displayNoOfStudentsByCoursesDecreasing);
+
+        Comparator<Course> noOfStudentsByCoursesAndByReviews =
+                Comparator.comparingInt(Course::getNoOfStudents).
+                        thenComparingInt(Course::getReviewScore)
+                        .reversed();
+
+        List<Course> displayNoOfStudentsByCoursesAndReviews = courses.stream()
+                .sorted(noOfStudentsByCoursesAndByReviews)
+                .collect(Collectors.toList());
+        System.out.println(displayNoOfStudentsByCoursesAndReviews);
     }
 }
