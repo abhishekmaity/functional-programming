@@ -123,5 +123,35 @@ public class FP_10 {
                 courses.stream()
                         .dropWhile(course->course.getReviewScore()>=95)
                         .collect(Collectors.toList()));
+
+        System.out.println(
+        courses.stream()
+                .max(noOfStudentsByCoursesAndByReviews));
+
+        System.out.println(
+                courses.stream()
+                        .min(noOfStudentsByCoursesAndByReviews)
+                        .orElse(new Course("Kubernetes", "Cloud", 91, 20000))); /*default value*/
+
+        System.out.println(
+                courses.stream()
+                        .filter(reviewScoreLessThan90Predicate)
+                        .min(noOfStudentsByCoursesAndByReviews)
+                        .orElse(new Course("Kubernetes", "Cloud", 91, 20000))); /*default value*/
+
+        System.out.println(
+                courses.stream()
+                        .filter(reviewScoreLessThan90Predicate)
+                        .findFirst());
+
+        System.out.println(
+                courses.stream()
+                        .filter(reviewScoreGreaterThan95Predicate)
+                        .findFirst());
+
+        System.out.println(
+                courses.stream()
+                        .filter(reviewScoreGreaterThan95Predicate)
+                        .findAny());
     }
 }
