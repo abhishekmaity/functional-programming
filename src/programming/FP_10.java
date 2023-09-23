@@ -109,7 +109,19 @@ public class FP_10 {
 
         List<Course> displayNoOfStudentsByCoursesAndReviews = courses.stream()
                 .sorted(noOfStudentsByCoursesAndByReviews)
+                .skip(3)
+                .limit(5)
                 .collect(Collectors.toList());
         System.out.println(displayNoOfStudentsByCoursesAndReviews);
+
+        System.out.println(
+        courses.stream()
+                .takeWhile(course->course.getReviewScore()>=95)
+                .collect(Collectors.toList()));
+
+        System.out.println(
+                courses.stream()
+                        .dropWhile(course->course.getReviewScore()>=95)
+                        .collect(Collectors.toList()));
     }
 }
