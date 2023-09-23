@@ -153,5 +153,29 @@ public class FP_10 {
                 courses.stream()
                         .filter(reviewScoreGreaterThan95Predicate)
                         .findAny());
+
+        System.out.println(
+                courses.stream()
+                        .filter(reviewScoreGreaterThan95Predicate)
+                        .mapToInt(Course::getNoOfStudents)
+                        .sum());
+
+        System.out.println(
+                courses.stream()
+                        .filter(reviewScoreGreaterThan95Predicate)
+                        .mapToInt(Course::getNoOfStudents)
+                        .average());
+
+        System.out.println(
+                courses.stream()
+                        .filter(reviewScoreGreaterThan95Predicate)
+                        .mapToInt(Course::getNoOfStudents)
+                        .count());
+
+        System.out.println(
+                courses.stream()
+                        .filter(reviewScoreGreaterThan95Predicate)
+                        .mapToInt(Course::getNoOfStudents)
+                        .max());
     }
 }
