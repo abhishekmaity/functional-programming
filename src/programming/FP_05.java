@@ -2,6 +2,7 @@ package programming;
 
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class FP_05 {
     public static void main(String[] args) {
         List<Integer> integers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
