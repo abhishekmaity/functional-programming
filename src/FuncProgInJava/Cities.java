@@ -17,14 +17,14 @@ public class Cities {
         System.out.println("Found chicago?:" + found);
     }
 
-/*    public static void findChicagoDeclarative(final List<String> cities) {
+    public static void findChicagoDeclarative(final List<String> cities) {
         System.out.println("Found chicago?:" + cities.contains("Chicago"));
-    }*/
+    }
 
     public static void main(final String[] args) {
         List<String> cities = Arrays.asList("Albany", "Boulder", "Chicago", "Denver", "Eugene");
 
-        findChicagoImperative(cities);
-        /*findChicagoDeclarative(cities);*/
+        /*findChicagoImperative(cities);*/
+        findChicagoDeclarative(cities);
     }
 }
